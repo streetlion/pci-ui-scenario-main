@@ -16,7 +16,9 @@ const columnDefs: ColDef[] = [
   { field: "q_au_2", headerName: "Q (au)", filter: "agTextColumnFilter"},
   { field: "period_yr", headerName: "Period (yr)", filter: "agTextColumnFilter"},
   { field: "i_deg", headerName: "Inclination (deg)", filter: "agTextColumnFilter"},
-  { field: "pha", headerName: "Potentially Hazardous", filter: "agTextColumnFilter"},
+  { field: "pha", headerName: "Potentially Hazardous", filter: "agTextColumnFilter", valueFormatter: (data) => {
+    return !data.value.includes('/') ? (data.value === 'Y' ? 'YES' : 'NO') : ' ';
+  }},
   { field: "orbit_class", headerName: "Orbit Class", enableRowGroup: true, filter: "agTextColumnFilter"},
 ];
 
