@@ -4,6 +4,7 @@ import { ColDef } from "ag-grid-community";
 import data from "./near-earth-asteroids.json";
 import "ag-grid-community/styles/ag-grid.css";
 import "ag-grid-community/styles/ag-theme-alpine.css";
+import "ag-grid-enterprise";
 
 const columnDefs: ColDef[] = [
   { field: "designation", headerName: "Designation", filter: "agTextColumnFilter"},
@@ -37,6 +38,7 @@ const NeoGrid = (): JSX.Element => {
           columnDefs={columnDefs}
           defaultColDef={defaultColDef}
           rowGroupPanelShow={'always'}
+          enableRangeSelection={true}
         />
       </div>
     </>
