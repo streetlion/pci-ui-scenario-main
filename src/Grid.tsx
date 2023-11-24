@@ -19,13 +19,16 @@ const columnDefs: ColDef[] = [
 
 const NeoGrid = (): JSX.Element => {
   return (
-    <div className="ag-theme-alpine" style={{ height: 900, width: 1920 }}>
-      <AgGridReact
-        rowData={data}
-        columnDefs={columnDefs}
-        rowGroupPanelShow={'always'}
-      />
-    </div>
+    <>
+      <h1 style={{display: "inline", marginRight: "15px"}}>Near-Earth Object Overview</h1>
+      <div className="ag-theme-alpine" style={{ height: 900, width: 1920 }}>
+        <AgGridReact
+          rowData={data}
+          columnDefs={columnDefs}
+          rowGroupPanelShow={'always'}
+        />
+      </div>
+    </>
   );
 };
 
