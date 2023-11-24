@@ -7,7 +7,9 @@ import "ag-grid-community/styles/ag-theme-alpine.css";
 
 const columnDefs: ColDef[] = [
   { field: "designation", headerName: "Designation", filter: "agTextColumnFilter"},
-  { field: "discovery_date", headerName: "Discovery Date", filter: "agTextColumnFilter"},
+  { field: "discovery_date", headerName: "Discovery Date", filter: "agTextColumnFilter", valueFormatter: (data) => {
+    return data.value ? (new Date(data.value)).toLocaleDateString() : '';
+  }},
   { field: "h_mag", headerName: "H (mag)", filter: "agTextColumnFilter"},
   { field: "moid_au", headerName: "MOID (au)", filter: "agTextColumnFilter"},
   { field: "q_au_1", headerName: "q (au)", filter: "agTextColumnFilter"},
